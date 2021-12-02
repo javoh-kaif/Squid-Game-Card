@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: rgb(20, 204, 173);
+}
+.container {
+    width: 90%;
+    margin: auto;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transform-style: preserve-3d;
+    transform-origin: center;
+    perspective: 2000px;
+}
+.card {
+    width: 300px;
+    height: 170px;
+    background: url('images.jfif');
+    position: absolute;
+    top: 50%; margin-top: -85px;
+    left: 50%; margin-left: -150px;
+    flex-basis: 28%;
+    box-shadow: 5px 6px 10px grey;
+    transform: rotateX(68deg);
+    transition: transform 1s;
+}
+.card:hover {
+    transform: rotateX(0deg) rotateY(180deg) translateZ(300px);
+}
+.circle {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 8px solid black;
+    position: absolute;
+    top: 50%; margin-top: -28px;
+    left: 54px;
+    transition: opacity 0.7s;
+}
+.square {
+    width: 56px;
+    height: 56px;
+    border: 8px solid black;
+    position: absolute;
+    top: 50%; margin-top: -28px;
+    left: auto;
+    right: 54px;
+    transition: opacity 0.7s;
+}
+.triangle {
+    position: relative;
+    top: 50%; margin-top: -28px;
+    left: 120px;
+    transition: opacity 0.7s;
+}
+.triangle span:first-child {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 28px solid transparent;
+    border-right: 28px solid transparent;
+    border-bottom: 56px solid black;
+}
+.triangle span:last-child {
+    position: absolute;
+    bottom: -47px;
+    left: 14px;
+    width: 0;
+    height: 0;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-bottom: 28px solid #c3aa94;
+}
+.text {
+   opacity: 0;
+}
+.card:hover .circle,
+.card:hover .square,
+.card:hover .triangle {
+    opacity: 0;
+}
+.card:hover .text {
+    transition: opacity 1s;
+    position: absolute;
+    opacity: 1;
+    top: 50%; margin-top: -20px;
+    left: 50%; margin-left: -133px;
+    color: #000;
+    font-family: 'Inconsolata', monospace;
+    font-weight: 500;
+    font-size: 28px;
+    transform: rotateY(180deg);
+}
